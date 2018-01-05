@@ -18,7 +18,8 @@
         <ul>
             <li>Nombre: <c:out value="${name}"/> </li>
             <li>Email: <c:out value="${email}"/> </li>
-            <li>Edad: <c:out value="${years}"/> </li>
+            <li>Edad: <c:out value="${age}"/> </li>
+            <li>Pais: <c:out value="${country}"/> </li>
         </ul>
     </body>
 </html>

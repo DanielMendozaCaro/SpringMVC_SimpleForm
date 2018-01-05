@@ -14,17 +14,22 @@ public class Person {
     private int id;
     private String name;
     private String email;
-    private int years;
+    private int age;
+    private int country;
+    
 
     public Person() {
     }
 
-    public Person(String name, String email, int years) {
+    public Person(int id, String name, String email, int age, int country) {
+        this.id = id;
         this.name = name;
         this.email = email;
-        this.years = years;
+        this.age = age;
+        this.country = country;
     }
 
+   
     public int getId() {
         return id;
     }
@@ -49,13 +54,19 @@ public class Person {
         this.email = email;
     }
 
-    public int getYears() {
-        return years;
+    public int getAge() {
+        return age;
     }
 
-    public void setYears(int years) {
-        this.years = years;
+    public void setAge(int age) {
+        this.age = age;
     }
     
-    
+     public int getCountry() {
+        return country;
+    }
+
+    public void setCountry(int country) {
+        this.country = country;
+    }
 }

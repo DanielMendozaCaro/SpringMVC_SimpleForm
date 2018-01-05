@@ -19,26 +19,33 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
+@RequestMapping(value="form.htm")
 public class FormController {
     
     
     
-    @RequestMapping(value="form.htm", method=RequestMethod.GET)
+    @RequestMapping(method=RequestMethod.GET)
     public ModelAndView form(){
-    
-        return new ModelAndView("form","command",new Person());
         
+        ModelAndView mav = new ModelAndView();
+        
+        mav.setViewName("form");
+        mav.addObject("person",new Person());
+        
+        
+        return mav;
         /* pass parameter throught the constructor of the class person
-        return new ModelAndView("form","command",new Person("Daniel", "Email@gmail.com", 23));
+        return new ModelAndView("form","command",new Person("Daniel", "Email@gmail.com", 23,1));
         */
     }
     
-    @RequestMapping(value="form.htm", method=RequestMethod.POST)
+    @RequestMapping(method=RequestMethod.POST)
     public String form(Person per, ModelMap model){
     
         model.addAttribute("name",per.getName());
         model.addAttribute("email",per.getEmail());
-        model.addAttribute("years",per.getYears());
+        model.addAttribute("age",per.getAge());
+        model.addAttribute("country",per.getCountry());
        
         return "success";
     }
