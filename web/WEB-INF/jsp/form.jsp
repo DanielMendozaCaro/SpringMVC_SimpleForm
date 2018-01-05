@@ -21,6 +21,9 @@
                 <h1>Complete the next form</h1>
                 <hr>
                 <form:form method="post" commandName="person">
+                    
+                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
+                    
                     <p>
                         <form:label path="name">Nombre: </form:label>
                         <form:input path="name" cssClass="form-control"/>
@@ -39,7 +42,9 @@
                         <form:label path="country">Pais: </form:label>
                         <form:select path="country" cssClass="form-control">
                             <form:option value="0">Seleccione pais...</form:option>
+                            <form:options items="${countries}"/>
                         </form:select>
+                            
                         
                     </p>
                     <hr>
